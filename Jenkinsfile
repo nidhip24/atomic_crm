@@ -3,16 +3,10 @@ pipeline {
 
   environment {
     DOCKER_IMAGE = "nidhip24/atomic-crm:latest"
-    KUBECONFIG_CREDENTIALS = 'kubeconfig-cred-id' // Jenkins secret text
+    KUBECONFIG_CREDENTIALS = 'kubeconfig-cred-id' // Jenkins secret file ID
   }
 
   stages {
-    stage('Checkout') {
-      steps {
-        git 'https://github.com/nidhip24/atomic_crm.git'
-      }
-    }
-
     stage('Build Docker Image') {
       steps {
         sh 'docker build -t $DOCKER_IMAGE .'

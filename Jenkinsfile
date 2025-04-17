@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git 'http://157.180.31.167:3000/nidhip24/atomic-crm.git'
+        git 'https://github.com/nidhip24/atomic_crm.git'
       }
     }
 
